@@ -1,0 +1,178 @@
+/** Overrides/extensions of pimcore css classes to adapt the UI appearance to our needs */
+:root {
+    --paper-shadow: 0px 2px 1px -1px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 1px 3px 0px rgba(0,0,0,0.12);
+    --paper-bg-darker: #2c2c2c;
+    --paper-bg-dark: #3a3c3f;
+    --paper-bg-light: #fff;
+    --button-shadow: rgba(0, 0, 0, 0.2) 0px 3px 1px -2px, rgba(0, 0, 0, 0.14) 0px 2px 2px 0px, rgba(0, 0, 0, 0.12) 0px 1px 5px 0px;
+    --border-radius: 4px;
+}
+
+/**
+    @Login
+ */
+.inverted #content input {
+    border-radius: var(--border-radius);
+    box-shadow: var(--paper-shadow) !important;
+}
+
+#content button {
+    border-radius: var(--border-radius);
+    box-shadow: var(--button-shadow) !important;
+}
+
+#footer {
+    left: 130px;
+}
+
+/**
+    @Panels & @Toolbars
+ */
+#pimcore_panel_tabs > .x-panel-bodyWrap > .x-tab-bar > .x-tab-bar-body .x-tab {
+    border-top-left-radius: var(--border-radius);
+    border-top-right-radius: var(--border-radius);
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+#pimcore_panel_tabs > .x-panel-bodyWrap > .x-tab-bar, #pimcore_body, .x-body .sf-minitoolbar, #pimcore_loading.loaded {
+    background-color: var(--paper-bg-darker) !important;
+}
+
+.x-panel-default, .pimcore_main_accordion .x-panel-body, .x-panel-header, .x-panel-body-default, .x-tab.x-tab-active.x-tab-default, .pimcore_object_panel_edit .x-toolbar-default, div.x-border-layout-ct, div.x-border-layout-ct, .x-form-checkbox-default:before, .x-fieldset .x-fieldset-header, .pimcore_main_splitter, .pimcore_main_accordion .x-panel-header  {
+    background-color: var(--paper-bg-light);
+}
+
+.x-panel-default.x-tabpanel-child {
+    border-top: 0;
+}
+
+.pimcore_main_accordion .x-collapsed .x-panel-header {
+    background-color: var(--paper-bg-darker);
+}
+
+.pimcore_main_toolbar.x-toolbar-default .x-box-inner {
+    min-height: 48px;
+}
+
+.x-toolbar-default .x-form-trigger-wrap-default {
+    min-width: unset;
+}
+
+.x-toolbar-default .x-box-inner {
+    min-height: 35px;
+}
+
+/**
+    @DropdownMenus
+ */
+.x-menu-body-default {
+    background-color: var(--paper-bg-darker);
+}
+
+/**
+    @Tabs
+ */
+.x-tab, .x-tab.x-tab-active, .x-tab-over {
+    border-top-left-radius: var(--border-radius);
+    border-top-right-radius: var(--border-radius);
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+    top: 1px !important;
+}
+
+.pimcore_editor_tabbar .x-tab {
+    border-left: 0;
+}
+
+/**
+    @Buttons
+ */
+.x-btn {
+    border-radius: var(--border-radius);
+    box-shadow: var(--button-shadow) !important;
+}
+
+/**
+    @Forms
+ */
+.x-form-field {
+    min-width: 32px;
+}
+
+.x-form-trigger-wrap-default {
+    min-width: 300px;
+}
+
+.x-form-item-label {
+    width: 200px !important;
+    min-width: 200px !important;
+}
+
+.x-form-item-label-inner {
+    width: unset !important;
+}
+
+/**
+    @Drawers
+ */
+.pimcore_main_splitter .x-collapse-el {
+    background-color: var(--paper-bg-light);
+}
+
+.x-layout-split-left:before {
+    content: '\f0d7';
+    background-color: var(--paper-bg-light);
+    border-radius: 20px 20px 0 0;
+}
+.x-layout-split-right:before {
+    content: '\f0d7';
+    background-color: var(--paper-bg-light);
+    border-radius: 20px 20px 0 0;
+}
+
+.x-splitter-collapsed .x-layout-split-left:before, .x-splitter-collapsed .x-layout-split-right:before {
+    content: '\f0d8';
+}
+
+.x-layout-split-left {
+    top: 50%;
+    margin-top: -24px;
+    width: 48px;
+    height: 24px;
+    position: absolute;
+    z-index: 3;
+    left: -3px;
+    border-radius: 4px 4px 0 0;
+    transform: rotate(90deg);
+    background-color: var(--paper-bg-light);
+    border: 1px solid #d0d0d0;
+    border-bottom: 0;
+}
+
+.x-layout-split-right {
+    top: 50%;
+    margin-top: -24px;
+    width: 48px;
+    height: 24px;
+    position: absolute;
+    z-index: 3;
+    right: -3px;
+    border-radius: 4px 4px 0 0;
+    transform: rotate(-90deg);
+    background-color: var(--paper-bg-light);
+    border: 1px solid #d0d0d0;
+    border-bottom: 0;
+}
+
+.pimcore_main_accordion {
+    z-index: 2;
+}
+
+.x-splitter-vertical {
+    z-index: 1;
+}
+
+.x-splitter-vertical:has(#pimcore_panel_tree_right-splitter-collapseEl), .x-splitter-vertical:has(#pimcore_panel_tree_left-splitter-collapseEl) {
+    box-shadow: var(--button-shadow);
+}
