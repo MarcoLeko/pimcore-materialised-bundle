@@ -1,0 +1,37 @@
+{
+  "name": "lekoma/pimcore-materialised-bundle",
+  "license": "GPL-3.0+",
+  "type": "pimcore-bundle",
+  "config": {
+    "discard-changes": true,
+    "sort-packages": true,
+    "preferred-install": {
+      "pimcore/pimcore": "source",
+      "*": "dist"
+    },
+    "allow-plugins": {
+      "php-http/discovery": false
+    }
+  },
+  "prefer-stable": true,
+  "minimum-stability": "dev",
+  "require": {
+    "php": "~8.1.0 || ~8.2.0 || ~8.3.0 || ~8.4.0",
+    "pimcore/pimcore": "^11.0 || ^12.0"
+  },
+  "require-dev": {
+    "nyholm/psr7": "^1"
+  },
+  "autoload": {
+    "psr-4": {
+      "Pimcore\\Bundle\\MaterialisedBundle\\": "src/"
+    }
+  },
+  "extra": {
+    "pimcore": {
+      "bundles": [
+        "Pimcore\\Bundle\\MaterialisedBundle\\PimcoreMaterialisedBundle"
+      ]
+    }
+  }
+}
