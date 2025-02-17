@@ -8,6 +8,20 @@
     --border-radius: 4px;
 }
 
+.ql-editor {
+    min-height: 125px;
+    overflow-y: auto;
+}
+
+.x-autocontainer-innerCt pre {
+    font-size: 11px;
+    text-wrap: unset;
+}
+
+.x-autocontainer-form-item {
+    margin: 10px 0;
+}
+
 /**
     @Login
  */
@@ -48,7 +62,7 @@
 }
 
 .pimcore_main_accordion .x-collapsed .x-panel-header {
-    background-color: var(--paper-bg-darker);
+    background-color: var(--paper-bg-dark);
 }
 
 .pimcore_main_toolbar.x-toolbar-default .x-box-inner {
@@ -60,7 +74,7 @@
 }
 
 .x-toolbar-default .x-box-inner {
-    min-height: 35px;
+    min-height: 36px;
 }
 
 /**
@@ -111,6 +125,28 @@
 
 .x-form-item-label-inner {
     width: unset !important;
+}
+
+.x-form-trigger-wrap-default {
+    min-width: 300px;
+    border-radius: var(--border-radius);
+    background-color: #EFF0F1;
+    color: #0C0F12;
+    border-color: transparent;
+    box-shadow: var(--paper-shadow);
+}
+
+.pimcore_droptarget_display.x-form-trigger-wrap-default {
+    box-shadow: unset;
+}
+
+.x-form-text-wrap {
+    border-radius: var(--border-radius);
+}
+
+.pimcore_droptarget_display div {
+    box-shadow: var(--paper-shadow);
+    border-radius: var(--border-radius);
 }
 
 /**
