@@ -32,6 +32,7 @@ return [
 ![demo](./docs/demo-object-view.png)
 ![demo](./docs/demo-tree-view.png)
 ![demo](./docs/demo-grid-view.png)
+![demo](./docs/demo-modal-view.png)
 
 To See more just apply the lib to your pimcore-project - and enjoy ;-)
 
