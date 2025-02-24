@@ -6,6 +6,7 @@ The Pimcore Materialised Bundle is a sleek and modern UI enhancement plugin for 
 
 ### How it works
 This package basically provides a patch-css files for all classes provided by the `pimcore/admin-ui-classic-bundle` library 
+
 ### ✨ Features
 
 * Material Design Aesthetics – Elevate Pimcore’s UI with smooth shadows, rounded edges, and improved spacing.
