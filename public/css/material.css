@@ -163,6 +163,18 @@ form#form-element input:-webkit-autofill:active {
     background: transparent url(/bundles/pimcoreadmin/img/inheritance-indicator.png) top left no-repeat !important;
 }
 
+.x-grid-body {
+    border-top-color: var(--paper-bg);
+}
+
+.pimcore_toolbar_border_bottom {
+    border-bottom: 1px solid var(--paper-bg) !important;
+}
+
+.x-form-display-field-default {
+    color: var(--paper-color);
+}
+
 .x-form-search-trigger {
     border-radius: 4px;
 }
