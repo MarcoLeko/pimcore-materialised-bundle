@@ -1,10 +1,12 @@
-/** Overrides/extensions of pimcore css classes to adapt the UI appearance to our needs */
 :root {
     --paper-shadow: 0px 2px 1px -1px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 1px 3px 0px rgba(0,0,0,0.12);
-    --paper-bg-darker: #2c2c2c;
-    --paper-bg-dark: #3a3c3f;
-    --paper-bg-light: #fff;
-    --bg-inherited-field: #dad9d9;
+    --paper-bg-accent: #2c2c2c;
+    --paper-bg-highlighted: #4c5052;
+    --paper-bg: #3a3c3f;
+    --paper-bg-contrast: #e5e5e5;
+    --paper-bg-grid-header: #d0d0d0;
+    --mask-bg: #4c505261;
+    --paper-color: #f0f0f0;
     --button-shadow: rgba(0, 0, 0, 0.2) 0px 3px 1px -2px, rgba(0, 0, 0, 0.14) 0px 2px 2px 0px, rgba(0, 0, 0, 0.12) 0px 1px 5px 0px;
     --border-radius: 4px;
     --border-radius-circle: 50%;
@@ -13,6 +15,19 @@
 .ql-editor {
     min-height: 125px;
     overflow-y: auto;
+}
+
+.ql-toolbar.ql-snow + .ql-container.ql-snow {
+    background-color: var(--paper-bg);
+    color: var(--paper-color);
+}
+.ql-toolbar.ql-snow {
+    border: 1px solid var(--paper-bg-accent);
+    background-color: var(--paper-bg-contrast);
+}
+
+.ql-container.ql-snow {
+    border: 0;
 }
 
 .x-autocontainer-innerCt pre {
@@ -24,12 +39,36 @@
     margin: 10px 0;
 }
 
+body > .x-mask {
+    background-color: var(--mask-bg);
+}
+
+/**
+    @Links
+ */
+a {
+    color: #a56cf0 !important;
+    font-weight: 500;
+}
+
 /**
     @Login
  */
-.inverted #content input {
+#content, #contentBackground {
+    background-color: var(--paper-bg-accent);
+}
+
+#content input {
     border-radius: var(--border-radius);
     box-shadow: var(--paper-shadow) !important;
+    background-color: var(--paper-bg);
+}
+
+form#form-element input:-webkit-autofill,
+form#form-element input:-webkit-autofill:hover,
+form#form-element input:-webkit-autofill:focus,
+form#form-element input:-webkit-autofill:active {
+    -webkit-text-fill-color: var(--paper-bg-accent) !important;
 }
 
 #content button {
@@ -53,19 +92,46 @@
 }
 
 #pimcore_panel_tabs > .x-panel-bodyWrap > .x-tab-bar, #pimcore_body, .x-body .sf-minitoolbar, #pimcore_loading.loaded {
-    background-color: var(--paper-bg-darker) !important;
+    background-color: var(--paper-bg-accent) !important;
 }
 
-.x-panel-default, .pimcore_main_accordion .x-panel-body, .x-panel-header, .x-panel-body-default, .x-tab.x-tab-active.x-tab-default, .pimcore_object_panel_edit .x-toolbar-default, div.x-border-layout-ct, div.x-border-layout-ct, .x-form-checkbox-default:before, .x-fieldset .x-fieldset-header, .pimcore_main_splitter, .pimcore_main_accordion .x-panel-header  {
-    background-color: var(--paper-bg-light);
+#pimcore_panel_tabs > .x-panel-bodyWrap > .x-tab-bar .x-tab-bar-body .x-tab-active {
+    background-color: var(--paper-bg) !important;
+    border-color: var(--paper-bg) !important;
+}
+
+#pimcore_panel_tabs > .x-panel-bodyWrap > .x-tab-bar > .x-tab-bar-body .x-tab {
+    background-color: var(--paper-bg-accent);
+}
+
+.x-panel-default, .x-panel-header, .x-panel-body-default, .pimcore_main_accordion .x-panel-body, .pimcore_object_panel_edit .x-toolbar-default, div.x-border-layout-ct, div.x-border-layout-ct, .x-form-checkbox-default:before, .x-fieldset .x-fieldset-header, .pimcore_main_splitter, .pimcore_main_accordion .x-panel-header {
+    background-color: var(--paper-bg);
+    color: var(--paper-color);
+}
+
+.x-tab.x-tab-active.x-tab-default {
+    background-color: var(--paper-bg-accent);
+}
+
+.x-toolbar-default, .x-toolbar-text-default, .x-form-cb-label-default, .x-panel-header-title-default, .x-tab.x-tab-active.x-tab-default .x-tab-inner-default, .x-tab-inner-default, .x-form-item-label-default, p, body {
+    background-color: inherit;
+    color: var(--paper-color);
 }
 
 .x-panel-default.x-tabpanel-child {
     border-top: 0;
 }
 
-.pimcore_main_accordion .x-collapsed .x-panel-header {
-    background-color: var(--paper-bg-dark);
+.pimcore_main_accordion .x-panel-header {
+    background-color: var(--paper-bg) !important;
+}
+
+.pimcore_main_accordion .x-panel-header {
+    box-shadow: var(--button-shadow);
+}
+
+.pimcore_main_accordion .x-panel-default {
+    border-bottom: 1px solid var(--paper-bg-accent);
 }
 
 .pimcore_main_toolbar .x-box-inner:has(.x-box-target:not(:empty)) {
@@ -81,19 +147,24 @@
 }
 
 .pimcore_object_grid_panel .x-grid-header-ct, .x-column-header {
-    padding: 12px 0;
+    padding: 4px 0;
 }
 
 .x-grid-with-row-lines .x-grid-item {
     padding: 12px 0;
+    border-color: var(--paper-bg-accent);
+}
+
+.x-grid-with-row-lines .x-grid-item:first-child {
+    border-top-color: var(--paper-bg-accent);
+}
+
+.grid_value_inherited {
+    background: transparent url(/bundles/pimcoreadmin/img/inheritance-indicator.png) top left no-repeat !important;
 }
 
 .x-form-search-trigger {
     border-radius: 4px;
-}
-
-.pimcore_object_tag_classification_store {
-    margin-top: 12px;
 }
 
 .pimcore_object_panel_edit .x-toolbar-default {
@@ -114,6 +185,7 @@
 .x-autocontainer-innerCt {
     background-size: 60%;
     overflow: auto;
+    background: inherit;
 }
 
 .x-toolbar-default .x-box-menu-after {
@@ -140,6 +212,23 @@
     width: 100% !important;
 }
 
+.x-grid-item.x-grid-item-selected {
+    background-color: var(--paper-bg-highlighted);
+}
+
+.x-panel .x-panel-default-outer-border-trl, .x-panel .x-panel-default-outer-border-trb, .x-panel .x-panel-default-outer-border-trl, .x-panel .x-panel-default-outer-border-rbl, .pimcore_object_panel_edit .x-panel-default-outer-border-trbl  {
+    border-color: var(--paper-bg-accent) !important;
+}
+
+.x-panel-default {
+    background: var(--paper-bg);
+    border-color: var(--paper-bg-accent);
+}
+
+.x-border-item {
+    border-right: 1px solid var(--paper-bg-accent);
+}
+
 .x-panel-default.x-tabpanel-child {
     z-index: 0;
 }
@@ -148,7 +237,7 @@
     @DropdownMenus
  */
 .x-menu-body-default {
-    background-color: var(--paper-bg-darker);
+    background-color: var(--paper-bg-accent);
 }
 
 /**
@@ -173,6 +262,12 @@
 .x-btn {
     border-radius: var(--border-radius);
     box-shadow: var(--button-shadow) !important;
+    background-color: var(--paper-bg);
+    border-color: var(--paper-bg-accent);
+}
+
+.x-btn-wrap-default-toolbar-small.x-btn-split-right > .x-btn-button:after {
+    border-right: 1px solid var(--paper-bg-accent);
 }
 
 /**
@@ -180,6 +275,15 @@
  */
 .x-form-field {
     min-width: 32px;
+}
+
+.x-form-text-default {
+    background-color: var(--paper-bg-highlighted);
+    color: var(--paper-color);
+}
+
+.pimcore_droptarget_display div {
+    background: url(/bundles/pimcoreadmin/img/flat-color-icons/target.svg) right 5px center / 20px no-repeat var(--paper-bg-highlighted) !important;
 }
 
 .x-form-trigger-wrap-focus {
@@ -197,10 +301,27 @@
 
 .x-form-trigger-wrap-default {
     border-radius: var(--border-radius);
-    background-color: #EFF0F1;
-    color: #0C0F12;
+    background-color: var(--paper-bg);
+    color: var(--paper-bg-accent);
     border-color: transparent;
     box-shadow: var(--paper-shadow);
+}
+
+.x-form-trigger-default {
+    background-color: var(--paper-bg);
+    border-radius: 0 var(--border-radius) var(--border-radius) 0;
+}
+
+.x-form-trigger-wrap:has(.x-form-trigger-default) .x-form-text-wrap {
+    border-radius: var(--border-radius) 0 0 var(--border-radius);
+}
+
+.x-tbar-page-number .x-form-trigger-wrap:has(.x-form-trigger-default) .x-form-text-wrap {
+    border-radius: var(--border-radius);
+}
+
+.x-form-spinner-default {
+    background-color: inherit;
 }
 
 .x-form-text-field-body-default {
@@ -218,11 +339,13 @@
 
 .x-form-text-wrap {
     border-radius: var(--border-radius);
+    background-color: inherit;
 }
 
 .pimcore_droptarget_display div {
     box-shadow: var(--paper-shadow);
     border-radius: var(--border-radius);
+    color: var(--paper-color);
 }
 
 .objectlayout_element_Layout .objectlayout_element_panel, .objectlayout_element_Layout .objectlayout_element_panel .x-panel-bodyWrap .x-panel-body-default, .objectlayout_element_Layout .objectlayout_element_panel .x-panel-bodyWrap .x-autocontainer-outerCt {
@@ -233,9 +356,37 @@
     min-height: 150px;
 }
 
-.x-boundlist {
+.object_field_type_multiselect .x-autocontainer-innerCt:has(.x-boundlist) {
     box-shadow: var(--button-shadow);
     border-radius: var(--border-radius);
+}
+
+.x-boundlist {
+    border: 0;
+    background: inherit;
+}
+
+.x-boundlist-item {
+    border-color: var(--paper-bg-accent);
+    color: var(--paper-color);
+    background-color: var(--paper-bg);
+}
+
+.x-boundlist-selected {
+    color: var(--paper-color);
+    background-color: var(--paper-bg-highlighted);
+}
+
+.x-panel-header-horizontal, .x-tab.x-tab-active.x-tab-default, .x-tab-bar-top .x-tab-bar-strip-default {
+    border-color: var(--paper-bg-accent) !important;
+}
+
+.x-fieldset {
+    border-top: 1px solid var(--paper-bg-accent) !important;
+}
+
+.x-fieldset-default {
+    border: 1px solid var(--paper-bg-accent);
 }
 
 /**
@@ -245,31 +396,65 @@
     transform: scale(1.25);
 }
 
-.pimcore_icon_folder {
-    filter: opacity(0.75);
-}
-
 .x-tree-view .x-grid-cell-inner-treecolumn, .pimcore_document_seo_tree .x-grid-cell-inner {
     padding: 8px 6px 3px 0;
     height: 28px;
 }
 
-.x-tree-view .x-grid-item {
-    background-color: var(--paper-bg-light);
+.x-tree-view .x-grid-item, .x-grid-item {
+    background-color: var(--paper-bg);
+    color: var(--paper-color);
+}
+
+.x-grid-item-alt {
+    background-color: var(--paper-bg-accent);
+}
+
+.x-keyboard-mode .x-tab-focus.x-tab-active.x-tab-default {
+    color: var(--paper-color) !important;
+    background-color: var(--paper-bg-accent) !important;
+}
+
+.x-keyboard-mode .x-grid-item-focused {
+    color: var(--paper-color) !important;
+}
+
+.x-keyboard-mode .x-tab-over.x-tab-default {
+    color: var(--paper-color) !important;
+    background-color: var(--paper-bg-highlighted) !important;
+}
+
+.x-tree-view .x-grid-item.x-grid-item-selected {
+    background-color: var(--paper-bg-accent);
+    color: var(--paper-color);
+}
+
+.x-grid-with-row-lines .x-grid-item.x-grid-item-over {
+    background-color: var(--paper-bg-highlighted);
+}
+
+.x-tree-view .x-grid-item.x-grid-item-over {
+    background-color: var(--paper-bg-highlighted);
+    color: var(--paper-color);
+}
+
+.pimcore_main_accordion .x-panel-header .x-title-text {
+    color: var(--paper-color);
 }
 
 .pimcore_main_splitter .x-collapse-el {
-    background-color: var(--paper-bg-light);
+    background-color: var(--paper-bg);
 }
 
 .x-layout-split-left:before {
     content: '\f0d7';
-    background-color: var(--paper-bg-light);
+    background-color: var(--paper-bg);
     border-radius: 20px 20px 0 0;
 }
+
 .x-layout-split-right:before {
     content: '\f0d7';
-    background-color: var(--paper-bg-light);
+    background-color: var(--paper-bg);
     border-radius: 20px 20px 0 0;
 }
 
@@ -287,8 +472,8 @@
     left: -3px;
     border-radius: var(--border-radius) var(--border-radius) 0 0;
     transform: rotate(90deg);
-    background-color: var(--paper-bg-light);
-    border: 1px solid #d0d0d0;
+    background-color: var(--paper-bg);
+    border: 1px solid var(--paper-bg-accent);
     border-bottom: 0;
 }
 
@@ -302,8 +487,8 @@
     right: -3px;
     border-radius: var(--border-radius) var(--border-radius) 0 0;
     transform: rotate(-90deg);
-    background-color: var(--paper-bg-light);
-    border: 1px solid #d0d0d0;
+    background-color: var(--paper-bg);
+    border: 1px solid var(--paper-bg-accent);
     border-bottom: 0;
 }
 
@@ -361,7 +546,7 @@
 }
 
 .pimcore_pagingtoolbar_container .x-toolbar-spacer {
-    background-color: var(--paper-bg-light);
+    background-color: var(--paper-bg);
     width: 0 !important;
 }
 
@@ -375,6 +560,14 @@
     position: relative;
     font-size: 14px;
     font-weight: bolder;
+}
+
+.x-btn-over {
+    background-color: var(--paper-bg-highlighted) !important;
+}
+
+.pimcore_pagingtoolbar_container .x-form-trigger-wrap-default {
+    border-color: transparent !important;
 }
 
 .pimcore_pagingtoolbar_container .x-form-text-default {
@@ -403,15 +596,35 @@
 
 .x-window-body-default {
     top: 0 !important;
-    margin-top: 40px;
+    margin-top: 38px;
+    background-color: var(--paper-bg);
+    color: var(--paper-color);
+}
+
+.x-toolbar-footer, .x-window-default {
+    background-color: var(--paper-bg);
+}
+
+.pimcore_editor_tabbar .x-tab.x-tab-active .x-tab-inner-default, .pimcore_editor_tabbar .x-tab.x-tab-over .x-tab-inner-default {
+    color: var(--paper-color) !important;
+}
+
+.pimcore_editor_tabbar .x-tab.x-tab-active .pimcore_material_icon, .pimcore_editor_tabbar .x-tab.x-tab-over .pimcore_material_icon {
+    filter: unset;
+}
+
+.pimcore_editor_tabbar .xtab.x-tab-over, .pimcore_editor_tabbar .x-tab.x-tab-active, .x-tab-over.x-tab-default.x-tab-over {
+    background-color: var(--paper-bg-accent);
+    color: var(--paper-color);
 }
 
 .object_value_inherited .x-form-field:has(.x-form-cb-input[type="checkbox"]) {
-    background-color: var(--paper-bg-light) !important;
+    background-color: var(--paper-bg) !important;
 }
 
-.object_value_inherited .x-form-field:has(.x-form-cb-input[type="checkbox"]):before {
-    background-color: var(--bg-inherited-field) !important;
+.object_value_inherited .x-form-field, .object_value_inherited .x-form-display-field {
+    background-color: inherit !important;
+    opacity: 1 !important;
 }
 
 /**
