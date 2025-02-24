@@ -21,14 +21,14 @@ class PimcoreMaterialisedBundle extends AbstractPimcoreBundle implements Pimcore
     public function getJsPaths(): array
     {
         return [
-            '/bundles/pimcorematerial/js/quill-overrides.css',
+            '/bundles/pimcorematerialised/js/quill-overrides.js',
         ];
     }
 
     public function getCssPaths(): array
     {
         return [
-            '/bundles/pimcorematerial/css/material.css',
+            '/bundles/pimcorematerialised/css/material.css',
         ];
     }
 
