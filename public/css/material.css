@@ -613,6 +613,15 @@ form#form-element input:-webkit-autofill:active {
     color: var(--paper-color);
 }
 
+.x-message-box .x-window-body {
+    background-color: var(--paper-bg);
+}
+
+.x-window-header-default {
+    border-color: var(--paper-bg);
+    background-color: var(--paper-bg);
+}
+
 .x-toolbar-footer, .x-window-default {
     background-color: var(--paper-bg);
 }
