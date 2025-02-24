@@ -103,6 +103,7 @@
     padding: 8px 6px 8px 6px;
     min-width: 320px;
     margin-bottom: 4px;
+    width: 100% !important;
 }
 
 .objectlayout_element_tabpanel .x-panel-header-default-horizontal.x-header-noborder {
@@ -119,7 +120,7 @@
     align-self: baseline;
 }
 
-.x-box-inner:has(.x-box-target:not(:empty)) {
+.x-box-inner:has(.x-btn), .x-box-inner:has(.x-form-item) {
     min-height: 35px;
 }
 
@@ -137,6 +138,10 @@
 
 .x-grid-with-row-lines .x-grid-item, .x-grid-item-container {
     width: 100% !important;
+}
+
+.x-panel-default.x-tabpanel-child {
+    z-index: 0;
 }
 
 /**
@@ -181,13 +186,9 @@
     border: none;
 }
 
-.x-form-trigger-wrap-default {
-    min-width: 300px;
-}
-
 .x-form-item-label {
-    width: 200px !important;
-    min-width: 200px !important;
+    width: 170px !important;
+    min-width: 170px !important;
 }
 
 .x-form-item-label-inner {
@@ -195,7 +196,6 @@
 }
 
 .x-form-trigger-wrap-default {
-    min-width: 300px;
     border-radius: var(--border-radius);
     background-color: #EFF0F1;
     color: #0C0F12;
@@ -229,6 +229,15 @@
     width: 100%;
 }
 
+.pimcore_editable_wysiwyg {
+    min-height: 150px;
+}
+
+.x-boundlist {
+    box-shadow: var(--button-shadow);
+    border-radius: var(--border-radius);
+}
+
 /**
     @Drawers
  */
@@ -243,6 +252,10 @@
 .x-tree-view .x-grid-cell-inner-treecolumn, .pimcore_document_seo_tree .x-grid-cell-inner {
     padding: 8px 6px 3px 0;
     height: 28px;
+}
+
+.x-tree-view .x-grid-item {
+    background-color: var(--paper-bg-light);
 }
 
 .pimcore_main_splitter .x-collapse-el {
@@ -272,7 +285,7 @@
     position: absolute;
     z-index: 3;
     left: -3px;
-    border-radius: 4px 4px 0 0;
+    border-radius: var(--border-radius) var(--border-radius) 0 0;
     transform: rotate(90deg);
     background-color: var(--paper-bg-light);
     border: 1px solid #d0d0d0;
@@ -287,7 +300,7 @@
     position: absolute;
     z-index: 3;
     right: -3px;
-    border-radius: 4px 4px 0 0;
+    border-radius: var(--border-radius) var(--border-radius) 0 0;
     transform: rotate(-90deg);
     background-color: var(--paper-bg-light);
     border: 1px solid #d0d0d0;
@@ -304,10 +317,6 @@
 
 .x-splitter-vertical:has(#pimcore_panel_tree_right-splitter-collapseEl), .x-splitter-vertical:has(#pimcore_panel_tree_left-splitter-collapseEl) {
     box-shadow: var(--button-shadow);
-}
-
-.x-splitter {
-    transition: 500ms !important;
 }
 
 .x-keyboard-mode .x-splitter-focus::after {
@@ -372,6 +381,14 @@
     height: 24px;
 }
 
+.x-btn:not(:last-child) {
+    margin-right: 4px;
+}
+
+.x-boundlist-item .x-boundlist-selected {
+    border-bottom: 1px solid #000;
+}
+
 /**
  * @Modal
  */
@@ -419,4 +436,8 @@
 
 .object_field_type_hotspotimage .x-panel-bodyWrap .x-panel-body .x-autocontainer-outerCt .x-autocontainer-innerCt .pimcore_droptarget_image {
     height: 100% !important;
+}
+
+.pimcore_image_container {
+    width: auto !important;
 }

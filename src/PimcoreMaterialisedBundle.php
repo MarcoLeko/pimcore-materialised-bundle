@@ -1,11 +1,6 @@
 <?php
 declare(strict_types=1);
 
-/**
- * Pimcore
- *
- */
-
 namespace Pimcore\Bundle\MaterialisedBundle;
 
 use Pimcore\Extension\Bundle\AbstractPimcoreBundle;
@@ -25,7 +20,9 @@ class PimcoreMaterialisedBundle extends AbstractPimcoreBundle implements Pimcore
 
     public function getJsPaths(): array
     {
-        return [];
+        return [
+            '/bundles/pimcorematerial/js/quill-overrides.css',
+        ];
     }
 
     public function getCssPaths(): array
