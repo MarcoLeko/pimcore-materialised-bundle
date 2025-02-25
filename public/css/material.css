@@ -675,6 +675,10 @@ form#form-element input:-webkit-autofill:active {
     padding-left: 3px;
 }
 
+.x-btn-inner-default-small {
+    color: var(--paper-color);
+}
+
 /**
  * @Pagination
  */
