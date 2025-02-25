@@ -644,6 +644,10 @@ form#form-element input:-webkit-autofill:active {
     border-bottom: 0;
 }
 
+#pimcore_navigation li:hover, #pimcore_navigation li:focus {
+    background-color: var(--paper-bg-highlighted);
+}
+
 /**
  * @Buttons
  */
@@ -779,4 +783,15 @@ form#form-element input:-webkit-autofill:active {
 
 .x-window-header-title-default > .x-title-text-default {
     color: var(--paper-color);
+}
+
+/**
+ * @Menu
+ */
+.x-menu-default {
+    background: var(--paper-bg-main-toolbar);
+}
+
+.x-menu-item-active {
+    background: var(--paper-bg-highlighted) !important;
 }
