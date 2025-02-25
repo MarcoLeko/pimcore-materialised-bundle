@@ -127,7 +127,7 @@ form#form-element input:-webkit-autofill:active {
 }
 
 .pimcore_main_accordion .x-panel-default {
-    border-bottom: 1px solid var(--paper-bg-accent);
+    border-bottom: 1px solid var(--paper-border-color);
 }
 
 .x-toolbar-default .x-form-trigger-wrap-default {
