@@ -1,11 +1,12 @@
 :root {
     --paper-shadow: 0px 2px 1px -1px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 1px 3px 0px rgba(0,0,0,0.12);
-    --paper-bg-accent: #2c2c2c;
+    --paper-bg-accent: #2d3638fc;
     --paper-bg-highlighted: #64686b;
     --paper-bg-main-toolbar: #445057;
     --paper-bg: #3a3c3f;
-    --paper-bg-contrast: #4b4e50;
+    --paper-bg-contrast: #7676764d;
     --paper-bg-grid-header: #d0d0d0;
+    --paper-border-color: #2c2c2c;
     --mask-bg: #4c505261;
     --paper-color: #f0f0f0;
     --button-shadow: rgba(0, 0, 0, 0.2) 0px 3px 1px -2px, rgba(0, 0, 0, 0.14) 0px 2px 2px 0px, rgba(0, 0, 0, 0.12) 0px 1px 5px 0px;
@@ -16,7 +17,7 @@
 
 @media (prefers-color-scheme: light) {
     :root {
-        --paper-bg-accent: #e8e8e8;
+        --paper-bg-accent: #26456308;
         --paper-bg-highlighted: #a7b8be;
         --paper-bg: #fafafa;
         --paper-bg-contrast: #cececea8;
@@ -24,6 +25,7 @@
         --paper-bg-main-toolbar: #3c4d56;
         --mask-bg: rgba(222, 222, 234, 0.38);
         --paper-color: #3b3b3b;
+        --paper-border-color: #cecbcb;
     }
 }
 
@@ -219,7 +221,7 @@ form#form-element input:-webkit-autofill:active {
 }
 
 .x-panel .x-panel-default-outer-border-trl, .x-panel .x-panel-default-outer-border-trb, .x-panel .x-panel-default-outer-border-trl, .x-panel .x-panel-default-outer-border-rbl, .pimcore_object_panel_edit .x-panel-default-outer-border-trbl  {
-    border-color: var(--paper-bg-accent) !important;
+    border-color: var(--paper-border-color) !important;
 }
 
 .x-panel-default {
@@ -379,7 +381,7 @@ form#form-element input:-webkit-autofill:active {
 }
 
 .x-panel-header-horizontal, .x-tab.x-tab-active.x-tab-default, .x-tab-bar-top .x-tab-bar-strip-default {
-    border-color: var(--paper-bg-accent) !important;
+    border-color: var(--paper-border-color) !important;
 }
 
 .x-fieldset {
@@ -413,11 +415,10 @@ form#form-element input:-webkit-autofill:active {
 
 .x-keyboard-mode .x-tab-focus.x-tab-active.x-tab-default {
     color: var(--paper-color) !important;
-    background-color: var(--paper-bg-accent) !important;
 }
 
 .x-keyboard-mode .x-tab-focus.x-tab-over.x-tab-default {
-    border: 0;
+    border: 1px solid var(--paper-border-color);
 }
 
 .x-keyboard-mode .x-grid-item-focused {
@@ -478,7 +479,7 @@ form#form-element input:-webkit-autofill:active {
     border-radius: var(--border-radius) var(--border-radius) 0 0;
     transform: rotate(90deg);
     background-color: var(--paper-bg);
-    border: 1px solid var(--paper-bg-accent);
+    border: 1px solid var(--paper-border-color);
     border-bottom: 0;
 }
 
@@ -493,7 +494,7 @@ form#form-element input:-webkit-autofill:active {
     border-radius: var(--border-radius) var(--border-radius) 0 0;
     transform: rotate(-90deg);
     background-color: var(--paper-bg);
-    border: 1px solid var(--paper-bg-accent);
+    border: 1px solid var(--paper-border-color);
     border-bottom: 0;
 }
 

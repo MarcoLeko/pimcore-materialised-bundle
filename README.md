@@ -11,6 +11,7 @@ This package basically provides a patch-css files for all classes provided by th
 
 * Material Design Aesthetics – Elevate Pimcore’s UI with smooth shadows, rounded edges, and improved spacing.
 * Refined UI Components – Buttons, toolbars, Modals and Form elements now look polished and consistent.
+* Support dark and light mode 🌓
 
 ### 📦 Installation
 
