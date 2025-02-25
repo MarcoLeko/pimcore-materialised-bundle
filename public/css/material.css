@@ -1,9 +1,10 @@
 :root {
     --paper-shadow: 0px 2px 1px -1px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 1px 3px 0px rgba(0,0,0,0.12);
     --paper-bg-accent: #2c2c2c;
-    --paper-bg-highlighted: #4c5052;
+    --paper-bg-highlighted: #64686b;
+    --paper-bg-main-toolbar: #445057;
     --paper-bg: #3a3c3f;
-    --paper-bg-contrast: #e5e5e5;
+    --paper-bg-contrast: #4b4e50;
     --paper-bg-grid-header: #d0d0d0;
     --mask-bg: #4c505261;
     --paper-color: #f0f0f0;
@@ -12,18 +13,32 @@
     --border-radius-circle: 50%;
 }
 
+
+@media (prefers-color-scheme: light) {
+    :root {
+        --paper-bg-accent: #e8e8e8;
+        --paper-bg-highlighted: #a7b8be;
+        --paper-bg: #fafafa;
+        --paper-bg-contrast: #cececea8;
+        --paper-bg-grid-header: #d0d0d0;
+        --paper-bg-main-toolbar: #3c4d56;
+        --mask-bg: rgba(222, 222, 234, 0.38);
+        --paper-color: #3b3b3b;
+    }
+}
+
 .ql-editor {
     min-height: 125px;
     overflow-y: auto;
 }
 
 .ql-toolbar.ql-snow + .ql-container.ql-snow {
-    background-color: var(--paper-bg);
     color: var(--paper-color);
+    background-color: var(--paper-bg-accent);
 }
+
 .ql-toolbar.ql-snow {
     border: 1px solid var(--paper-bg-accent);
-    background-color: var(--paper-bg-contrast);
 }
 
 .ql-container.ql-snow {
@@ -81,30 +96,9 @@ form#form-element input:-webkit-autofill:active {
 }
 
 /**
-    @Panels & @Toolbars & @Grids @Tabs
+    @Grids @Tabs
  */
-#pimcore_panel_tabs > .x-panel-bodyWrap > .x-tab-bar > .x-tab-bar-body .x-tab {
-    border-top-left-radius: var(--border-radius);
-    border-top-right-radius: var(--border-radius);
-    border-bottom-right-radius: 0;
-    border-bottom-left-radius: 0;
-    height: unset;
-}
-
-#pimcore_panel_tabs > .x-panel-bodyWrap > .x-tab-bar, #pimcore_body, .x-body .sf-minitoolbar, #pimcore_loading.loaded {
-    background-color: var(--paper-bg-accent) !important;
-}
-
-#pimcore_panel_tabs > .x-panel-bodyWrap > .x-tab-bar .x-tab-bar-body .x-tab-active {
-    background-color: var(--paper-bg) !important;
-    border-color: var(--paper-bg) !important;
-}
-
-#pimcore_panel_tabs > .x-panel-bodyWrap > .x-tab-bar > .x-tab-bar-body .x-tab {
-    background-color: var(--paper-bg-accent);
-}
-
-.x-panel-default, .x-panel-header, .x-panel-body-default, .pimcore_main_accordion .x-panel-body, .pimcore_object_panel_edit .x-toolbar-default, div.x-border-layout-ct, div.x-border-layout-ct, .x-form-checkbox-default:before, .x-fieldset .x-fieldset-header, .pimcore_main_splitter, .pimcore_main_accordion .x-panel-header {
+.x-panel-default, .x-panel-header, .x-panel-body-default, div.x-border-layout-ct, div.x-border-layout-ct, .pimcore_main_accordion .x-panel-body, .pimcore_object_panel_edit .x-toolbar-default, .x-form-checkbox-default:before, .x-fieldset .x-fieldset-header, .pimcore_main_splitter, .pimcore_main_accordion .x-panel-header {
     background-color: var(--paper-bg);
     color: var(--paper-color);
 }
@@ -113,7 +107,7 @@ form#form-element input:-webkit-autofill:active {
     background-color: var(--paper-bg-accent);
 }
 
-.x-toolbar-default, .x-toolbar-text-default, .x-form-cb-label-default, .x-panel-header-title-default, .x-tab.x-tab-active.x-tab-default .x-tab-inner-default, .x-tab-inner-default, .x-form-item-label-default, p, body {
+.x-toolbar-default, .x-toolbar-text-default, .x-form-cb-label-default, .x-panel-header-title-default, .x-tab.x-tab-active.x-tab-default .x-tab-inner-default, .x-tab-inner-default, p, body, .pimcore_main_accordion .x-collapsed .x-panel-header .x-title-text {
     background-color: inherit;
     color: var(--paper-color);
 }
@@ -132,10 +126,6 @@ form#form-element input:-webkit-autofill:active {
 
 .pimcore_main_accordion .x-panel-default {
     border-bottom: 1px solid var(--paper-bg-accent);
-}
-
-.pimcore_main_toolbar .x-box-inner:has(.x-box-target:not(:empty)) {
-    min-height: 48px;
 }
 
 .x-toolbar-default .x-form-trigger-wrap-default {
@@ -269,33 +259,32 @@ form#form-element input:-webkit-autofill:active {
 }
 
 /**
-    @Buttons
- */
-.x-btn {
-    border-radius: var(--border-radius);
-    box-shadow: var(--button-shadow) !important;
-    background-color: var(--paper-bg);
-    border-color: var(--paper-bg-accent);
-}
-
-.x-btn-wrap-default-toolbar-small.x-btn-split-right > .x-btn-button:after {
-    border-right: 1px solid var(--paper-bg-accent);
-}
-
-/**
     @Forms
  */
+.x-form-item-label-default {
+    background-color: var(--paper-bg);
+    color: var(--paper-color);
+}
+
+.x-form-type-checkbox {
+    background-color: var(--paper-bg);
+}
+
+.x-form-item-body-default:has(.x-form-type-checkbox), .x-form-item-body-default {
+    background-color: var(--paper-bg);
+}
+
 .x-form-field {
     min-width: 32px;
 }
 
 .x-form-text-default {
-    background-color: var(--paper-bg-highlighted);
+    background-color: inherit;
     color: var(--paper-color);
 }
 
 .pimcore_droptarget_display div {
-    background: url(/bundles/pimcoreadmin/img/flat-color-icons/target.svg) right 5px center / 20px no-repeat var(--paper-bg-highlighted) !important;
+    background: url(/bundles/pimcoreadmin/img/flat-color-icons/target.svg) right 5px center / 20px no-repeat var(--paper-bg-accent) !important;
 }
 
 .x-form-trigger-wrap-focus {
@@ -351,7 +340,7 @@ form#form-element input:-webkit-autofill:active {
 
 .x-form-text-wrap {
     border-radius: var(--border-radius);
-    background-color: inherit;
+    background-color: var(--paper-bg-accent);
 }
 
 .pimcore_droptarget_display div {
@@ -425,6 +414,10 @@ form#form-element input:-webkit-autofill:active {
 .x-keyboard-mode .x-tab-focus.x-tab-active.x-tab-default {
     color: var(--paper-color) !important;
     background-color: var(--paper-bg-accent) !important;
+}
+
+.x-keyboard-mode .x-tab-focus.x-tab-over.x-tab-default {
+    border: 0;
 }
 
 .x-keyboard-mode .x-grid-item-focused {
@@ -520,6 +513,170 @@ form#form-element input:-webkit-autofill:active {
     border: none !important;
 }
 
+.x-boundlist-item .x-boundlist-selected {
+    border-bottom: 1px solid #000;
+}
+
+.object_value_inherited .x-form-field:has(.x-form-cb-input[type="checkbox"]) {
+    background-color: var(--paper-bg) !important;
+}
+
+.object_value_inherited .x-form-field, .object_value_inherited .x-form-display-field {
+    background-color: var(--paper-bg-accent) !important;
+    opacity: 1 !important;
+}
+
+.object_value_inherited {
+    opacity: 1 !important;
+}
+
+/**
+ * @Images
+ */
+.object_field_name_image {
+    min-width: 320px;
+}
+
+.object_field_type_imageGallery {
+    min-height: 210px;
+}
+
+.object_field_type_hotspotimage .x-panel-bodyWrap .x-toolbar, .object_field_type_image .x-panel-bodyWrap .x-toolbar {
+    min-width: 150px;
+}
+
+.object_field_type_imageGallery .x-panel-bodyWrap .x-panel-body .x-autocontainer-outerCt .x-autocontainer-innerCt .x-panel-default .x-panel-bodyWrap {
+    display: flex;
+    justify-content: center;
+}
+
+.object_field_type_hotspotimage .x-panel-bodyWrap .x-panel-body .x-autocontainer-outerCt .x-autocontainer-innerCt .pimcore_droptarget_image {
+    height: 100% !important;
+}
+
+.pimcore_image_container {
+    width: auto !important;
+}
+
+/*
+ * @Main-Toolbar
+ */
+.pimcore_main_toolbar .x-box-inner:has(.x-box-target:not(:empty)) {
+    min-height: 48px;
+}
+
+.pimcore_main_toolbar.x-toolbar-default, .pimcore_editor_tabbar {
+    background-color: var(--paper-bg-main-toolbar);
+    color: var(--paper-color);
+}
+
+.pimcore_main_toolbar .pimcore_save_button {
+    background-color: #28a050 !important;
+}
+
+.pimcore_main_toolbar .x-toolbar-text, .pimcore_main_toolbar .x-form-cb-label  {
+    color: var(--paper-color);
+
+    @media (prefers-color-scheme: light) {
+        color: var(--paper-bg);
+    }
+}
+
+.pimcore_main_toolbar .x-btn {
+    background-color: var(--paper-bg-main-toolbar);
+}
+
+.pimcore_editor_tabbar .x-tab.x-tab-active + .x-tab, .pimcore_editor_tabbar .x-tab:first-child {
+    border-color: transparent;
+}
+
+.pimcore_editor_tabbar .x-tab.x-tab-active .x-tab-inner-default, .pimcore_editor_tabbar .x-tab.x-tab-over .x-tab-inner-default {
+    color: var(--paper-color) !important;
+}
+
+.pimcore_editor_tabbar .xtab.x-tab-over, .x-tab-over.x-tab-default.x-tab-over, .pimcore_editor_tabbar .x-tab {
+    background-color: var(--paper-bg-main-toolbar);
+}
+
+.pimcore_editor_tabbar .x-tab.x-tab-active {
+    background-color: var(--paper-bg);
+}
+
+/**
+ * @Main-Panel
+ */
+#pimcore_panel_tabs > .x-panel-bodyWrap > .x-tab-bar .x-tab-active .x-tab-close-btn, #pimcore_panel_tabs > .x-panel-bodyWrap > .x-tab-bar .x-tab-close-btn {
+    background-color: inherit;
+}
+
+#pimcore_panel_tabs > .x-panel-bodyWrap > .x-tab-bar .x-tab-inner-default {
+    color: var(--paper-color);
+}
+
+#pimcore_panel_tabs > .x-panel-bodyWrap > .x-tab-bar .x-tab-active .x-tab-inner-default {
+    color: var(--paper-color);
+}
+
+#pimcore_panel_tabs > .x-panel-bodyWrap > .x-tab-bar > .x-tab-bar-body .x-tab {
+    border-top-left-radius: var(--border-radius);
+    border-top-right-radius: var(--border-radius);
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+    height: unset;
+    background-color: var(--paper-bg-contrast);
+}
+
+#pimcore_panel_tabs > .x-panel-bodyWrap > .x-tab-bar, .x-body .sf-minitoolbar, #pimcore_loading.loaded, #pimcore_body {
+    background-color: var(--paper-bg-main-toolbar) !important;
+}
+
+#pimcore_panel_tabs > .x-panel-bodyWrap > .x-tab-bar .x-tab-bar-body .x-tab-active {
+    background-color: var(--paper-bg) !important;
+    border-color: var(--paper-bg) !important;
+}
+
+#pimcore_panel_tabs > .x-panel-bodyWrap > .x-tab-bar > .x-tab-bar-body .x-tab-active + .x-tab, #pimcore_panel_tabs > .x-panel-bodyWrap > .x-tab-bar > .x-tab-bar-body .x-tab {
+    border: 0;
+}
+
+#pimcore_navigation li {
+    border-bottom: 0;
+}
+
+/**
+ * @Buttons
+ */
+.x-btn {
+    border-radius: var(--border-radius);
+    box-shadow: var(--button-shadow) !important;
+    background-color: var(--paper-bg-contrast);
+    border-color: var(--paper-bg-accent);
+}
+
+.x-btn-wrap-default-toolbar-small.x-btn-split-right > .x-btn-button:after {
+    border-right: 1px solid var(--paper-bg-accent);
+}
+
+.x-btn:not(:last-child) {
+    margin-right: 4px;
+}
+
+.x-btn-over {
+    background-color: var(--paper-bg-highlighted) !important;
+}
+
+.x-btn-inner-default-toolbar-small {
+    color: var(--paper-color);
+}
+
+.x-btn-wrap-default-toolbar-small.x-btn-split-right:after {
+    color: var(--paper-color);
+    padding-left: 3px;
+}
+
+/**
+ * @Pagination
+ */
 .pimcore_pagingtoolbar_container .x-toolbar .x-box-inner:has(.x-box-target:not(:empty)) {
     min-height: 32px;
     padding: 0 2px;
@@ -574,10 +731,6 @@ form#form-element input:-webkit-autofill:active {
     font-weight: bolder;
 }
 
-.x-btn-over {
-    background-color: var(--paper-bg-highlighted) !important;
-}
-
 .pimcore_pagingtoolbar_container .x-form-trigger-wrap-default {
     border-color: transparent !important;
 }
@@ -586,19 +739,12 @@ form#form-element input:-webkit-autofill:active {
     height: 24px;
 }
 
-.x-btn:not(:last-child) {
-    margin-right: 4px;
-}
-
-.x-boundlist-item .x-boundlist-selected {
-    border-bottom: 1px solid #000;
-}
-
 /**
  * @Modal
  */
 .x-window-header-default {
     height: 40px;
+    color: var(--paper-color)
 }
 
 .x-window-default {
@@ -626,52 +772,6 @@ form#form-element input:-webkit-autofill:active {
     background-color: var(--paper-bg);
 }
 
-.pimcore_editor_tabbar .x-tab.x-tab-active .x-tab-inner-default, .pimcore_editor_tabbar .x-tab.x-tab-over .x-tab-inner-default {
-    color: var(--paper-color) !important;
-}
-
-.pimcore_editor_tabbar .x-tab.x-tab-active .pimcore_material_icon, .pimcore_editor_tabbar .x-tab.x-tab-over .pimcore_material_icon {
-    filter: unset;
-}
-
-.pimcore_editor_tabbar .xtab.x-tab-over, .pimcore_editor_tabbar .x-tab.x-tab-active, .x-tab-over.x-tab-default.x-tab-over {
-    background-color: var(--paper-bg-accent);
+.x-window-header-title-default > .x-title-text-default {
     color: var(--paper-color);
-}
-
-.object_value_inherited .x-form-field:has(.x-form-cb-input[type="checkbox"]) {
-    background-color: var(--paper-bg) !important;
-}
-
-.object_value_inherited .x-form-field, .object_value_inherited .x-form-display-field {
-    background-color: inherit !important;
-    opacity: 1 !important;
-}
-
-/**
- * @Images
- */
-.object_field_name_image {
-    min-width: 320px;
-}
-
-.object_field_type_imageGallery {
-    min-height: 210px;
-}
-
-.object_field_type_hotspotimage .x-panel-bodyWrap .x-toolbar, .object_field_type_image .x-panel-bodyWrap .x-toolbar {
-    min-width: 150px;
-}
-
-.object_field_type_imageGallery .x-panel-bodyWrap .x-panel-body .x-autocontainer-outerCt .x-autocontainer-innerCt .x-panel-default .x-panel-bodyWrap {
-    display: flex;
-    justify-content: center;
-}
-
-.object_field_type_hotspotimage .x-panel-bodyWrap .x-panel-body .x-autocontainer-outerCt .x-autocontainer-innerCt .pimcore_droptarget_image {
-    height: 100% !important;
-}
-
-.pimcore_image_container {
-    width: auto !important;
 }
