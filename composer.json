@@ -2,7 +2,7 @@
   "name": "lekoma/pimcore-materialised-bundle",
   "description": "Library for providing pimcore admin ui in material-design",
   "license": "GPL-3.0-or-later",
-  "version": "1.1.5",
+  "version": "1.1.6",
   "type": "pimcore-bundle",
   "config": {
     "discard-changes": true,

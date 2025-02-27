@@ -753,7 +753,9 @@ form#form-element input:-webkit-autofill:active {
  */
 .x-window-header-default {
     height: 40px;
-    color: var(--paper-color)
+    color: var(--paper-color);
+    border-color: var(--paper-border-color);
+    background-color: var(--paper-bg-accent);
 }
 
 .x-window-default {
@@ -769,11 +771,6 @@ form#form-element input:-webkit-autofill:active {
 }
 
 .x-message-box .x-window-body {
-    background-color: var(--paper-bg);
-}
-
-.x-window-header-default {
-    border-color: var(--paper-bg);
     background-color: var(--paper-bg);
 }
 
