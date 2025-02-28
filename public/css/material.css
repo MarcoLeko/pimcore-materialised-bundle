@@ -85,7 +85,7 @@ form#form-element input:-webkit-autofill,
 form#form-element input:-webkit-autofill:hover,
 form#form-element input:-webkit-autofill:focus,
 form#form-element input:-webkit-autofill:active {
-    -webkit-text-fill-color: var(--paper-bg-accent) !important;
+    -webkit-text-fill-color: var(--paper-color) !important;
 }
 
 #content button {
