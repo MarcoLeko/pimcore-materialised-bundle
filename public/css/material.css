@@ -654,7 +654,7 @@ form#form-element input:-webkit-autofill:active {
 .x-btn {
     border-radius: var(--border-radius);
     box-shadow: var(--button-shadow) !important;
-    background-color: var(--paper-bg-contrast);
+    background-color: var(--paper-bg-contrast) !important;
     border-color: var(--paper-bg-accent);
 }
 

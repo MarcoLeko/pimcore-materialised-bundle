@@ -31,6 +31,9 @@ return [
 
 ### 🎨 Screenshots
 
+#### Object view - light mode
+![demo](./docs/demo-object-view-light.png)
+
 #### Object view
 ![demo](./docs/demo-object-view.png)
 
