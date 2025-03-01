@@ -442,6 +442,7 @@ form#form-element input:-webkit-autofill:active {
  */
 .x-tree-icon {
     transform: scale(1.25);
+    z-index: 1;
 }
 
 .x-tree-view .x-grid-cell-inner-treecolumn, .pimcore_document_seo_tree .x-grid-cell-inner {
