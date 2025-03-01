@@ -2,11 +2,12 @@
     --paper-shadow: 0px 2px 1px -1px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 1px 3px 0px rgba(0,0,0,0.12);
     --button-shadow: rgba(0, 0, 0, 0.2) 0px 3px 1px -2px, rgba(0, 0, 0, 0.14) 0px 2px 2px 0px, rgba(0, 0, 0, 0.12) 0px 1px 5px 0px;
     --border-radius: 4px;
+    --border-radius-list-item: 24px;
     --border-radius-circle: 50%;
-    --paper-bg-accent: #26456308;
+    --paper-bg-accent: rgb(237, 239, 241);
     --paper-bg-highlighted: #a7b8be;
     --paper-bg: #fafafa;
-    --paper-bg-contrast: #cececea8;
+    --paper-bg-contrast: #e4ebf2a8;
     --paper-bg-grid-header: #d0d0d0;
     --paper-bg-main-toolbar: #3c4d56;
     --mask-bg: rgba(222, 222, 234, 0.38);
@@ -105,8 +106,40 @@ form#form-element input:-webkit-autofill:active {
     color: var(--paper-color);
 }
 
-.x-tab.x-tab-active.x-tab-default {
+.pimcore_main_accordion:has(#pimcore_panel_tree_left-bodyWrap) {
+    padding-top: 8px;
+    padding-left: 10px;
+}
+
+.pimcore_main_accordion:has(#pimcore_panel_tree_right-bodyWrap) {
+    padding-top: 8px;
+    padding-right: 10px;
+}
+
+.pimcore_main_accordion .x-panel-header.x-panel-header-collapsed {
+    border-bottom: 0 !important;
+}
+
+.pimcore_main_accordion .x-accordion-hd .x-tool-img {
+    display: none;
+}
+
+.pimcore_main_accordion .x-accordion-hd .x-panel-header-title {
+    display: flex;
+    align-items: center;
+}
+
+.pimcore_main_accordion .x-panel-header.x-panel-header-collapsed .x-title-text {
+    font-weight: 500;
+}
+
+.pimcore_main_accordion .x-collapsed .pimcore_icon_main_tree_asset {
+    filter: invert(1) !important;
+}
+
+.x-tab.x-tab-active.x-tab-default, .x-keyboard-mode .x-tab-focus.x-tab-active.x-tab-default {
     background-color: var(--paper-bg-accent);
+    top: 0;
 }
 
 .x-toolbar-default, .x-toolbar-text-default, .x-form-cb-label-default, .x-panel-header-title-default, .x-tab.x-tab-active.x-tab-default .x-tab-inner-default, .x-tab-inner-default, p, body, .pimcore_main_accordion .x-collapsed .x-panel-header .x-title-text {
@@ -118,16 +151,28 @@ form#form-element input:-webkit-autofill:active {
     border-top: 0;
 }
 
+.pimcore_main_accordion .x-panel-header .x-title-text {
+    color: var(--paper-color);
+}
+
+.pimcore_main_accordion {
+    z-index: 2;
+    outline: 1px solid var(--paper-bg);
+}
+
 .pimcore_main_accordion .x-panel-header {
+    background-color: var(--paper-bg-accent) !important;
+    border-radius: var(--border-radius-list-item);
+}
+
+.pimcore_main_accordion .x-panel .x-collapsed {
     background-color: var(--paper-bg) !important;
+    border-radius: 0;
 }
 
-.pimcore_main_accordion .x-panel-header {
-    box-shadow: var(--button-shadow);
-}
-
-.pimcore_main_accordion .x-panel-default {
-    border-bottom: 1px solid var(--paper-border-color);
+.pimcore_main_accordion .x-panel .x-collapsed:hover {
+    background-color: var(--paper-bg-accent) !important;
+    border-radius: var(--border-radius-list-item);
 }
 
 .x-toolbar-default .x-form-trigger-wrap-default {
@@ -444,8 +489,8 @@ form#form-element input:-webkit-autofill:active {
     color: var(--paper-color);
 }
 
-.pimcore_main_accordion .x-panel-header .x-title-text {
-    color: var(--paper-color);
+.pimcore_main_splitter  {
+    box-shadow: none !important;
 }
 
 .pimcore_main_splitter .x-collapse-el {
@@ -498,16 +543,12 @@ form#form-element input:-webkit-autofill:active {
     border-bottom: 0;
 }
 
-.pimcore_main_accordion {
-    z-index: 2;
-}
-
 .x-splitter-vertical {
     z-index: 1;
 }
 
 .x-splitter-vertical:has(#pimcore_panel_tree_right-splitter-collapseEl), .x-splitter-vertical:has(#pimcore_panel_tree_left-splitter-collapseEl) {
-    box-shadow: var(--button-shadow);
+    box-shadow: var(--button-shadow) !important;
 }
 
 .x-keyboard-mode .x-splitter-focus::after {
@@ -571,8 +612,8 @@ form#form-element input:-webkit-autofill:active {
     color: var(--paper-color);
 }
 
-.pimcore_main_toolbar .pimcore_save_button {
-    background-color: #28a050 !important;
+.pimcore-workflow-place-indicator {
+    border-radius: var(--border-radius);
 }
 
 .pimcore_main_toolbar .x-toolbar-text, .pimcore_main_toolbar .x-form-cb-label  {
@@ -584,11 +625,19 @@ form#form-element input:-webkit-autofill:active {
 }
 
 .pimcore_main_toolbar .x-btn {
-    background-color: var(--paper-bg-main-toolbar);
+    background-color: var(--paper-bg-main-toolbar) !important;
 }
 
-.pimcore_editor_tabbar .x-tab.x-tab-active + .x-tab, .pimcore_editor_tabbar .x-tab:first-child {
-    border-color: transparent;
+.pimcore_main_toolbar .x-btn-over {
+    background-color: var(--paper-bg-highlighted) !important;
+}
+
+.pimcore_main_toolbar .pimcore_save_button {
+    background-color: #28a050 !important;
+}
+
+.pimcore_editor_tabbar .x-tab.x-tab-active + .x-tab, .pimcore_editor_tabbar .x-tab:first-child, .pimcore_editor_tabbar .x-tab.x-tab-active {
+    border: none;
 }
 
 .pimcore_editor_tabbar .x-tab.x-tab-active .x-tab-inner-default, .pimcore_editor_tabbar .x-tab.x-tab-over .x-tab-inner-default {
@@ -658,16 +707,17 @@ form#form-element input:-webkit-autofill:active {
     border-color: var(--paper-bg-accent);
 }
 
+.x-btn-over {
+    background-color: var(--paper-bg-highlighted) !important;
+    border: 0;
+}
+
 .x-btn-wrap-default-toolbar-small.x-btn-split-right > .x-btn-button:after {
     border-right: 1px solid var(--paper-bg-accent);
 }
 
 .x-btn:not(:last-child) {
     margin-right: 4px;
-}
-
-.x-btn-over {
-    background-color: var(--paper-bg-highlighted) !important;
 }
 
 .x-btn-inner-default-toolbar-small {
