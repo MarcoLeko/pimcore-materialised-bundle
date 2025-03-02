@@ -134,7 +134,7 @@ form#form-element input:-webkit-autofill:active {
 }
 
 .pimcore_main_accordion .x-collapsed .pimcore_icon_main_tree_asset {
-    filter: invert(1) !important;
+    filter: invert(1);
 }
 
 .x-tab.x-tab-active.x-tab-default, .x-keyboard-mode .x-tab-focus.x-tab-active.x-tab-default {
@@ -187,8 +187,12 @@ form#form-element input:-webkit-autofill:active {
     padding: 4px 0;
 }
 
+.x-column-header {
+    padding: 8px 0;
+}
+
 .x-grid-with-row-lines .x-grid-item {
-    padding: 12px 0;
+    padding: 8px 0;
     border-color: var(--paper-bg-accent);
 }
 
@@ -286,7 +290,27 @@ form#form-element input:-webkit-autofill:active {
     @DropdownMenus
  */
 .x-menu-body-default {
-    background-color: var(--paper-bg-accent);
+    background-color: var(--paper-bg-contrast);
+}
+
+.x-menu-item-default {
+    border-top: none;
+}
+
+.x-menu-item-default .x-menu-item-active {
+    background-color: var(--paper-bg-highlighted) !important;
+}
+
+.x-menu-item-icon-default {
+    color: var(--paper-color);
+
+    @media (prefers-color-scheme: light) {
+        filter: invert(.75);
+    }
+}
+
+.x-menu-item .x-menu-item-text-default, .x-menu-item-active .x-menu-item-text-default, .x-menu-item-active .x-menu-item-arrow-default {
+    color: var(--paper-color);
 }
 
 /**
@@ -297,7 +321,6 @@ form#form-element input:-webkit-autofill:active {
     border-top-right-radius: var(--border-radius);
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;
-    top: 1px !important;
 }
 
 .pimcore_editor_tabbar .x-tab {
@@ -308,6 +331,11 @@ form#form-element input:-webkit-autofill:active {
 /**
     @Forms
  */
+
+.x-panel-header-default-horizontal .x-panel-header-title {
+    margin-bottom: 8px !important;
+}
+
 .x-form-item-label-default {
     background-color: var(--paper-bg);
     color: var(--paper-color);
@@ -637,7 +665,7 @@ form#form-element input:-webkit-autofill:active {
     background-color: #28a050 !important;
 }
 
-.pimcore_editor_tabbar .x-tab.x-tab-active + .x-tab, .pimcore_editor_tabbar .x-tab:first-child, .pimcore_editor_tabbar .x-tab.x-tab-active {
+.pimcore_editor_tabbar .x-tab.x-tab-active + .x-tab, .pimcore_editor_tabbar .x-tab:first-child, .pimcore_editor_tabbar .x-tab.x-tab-active, .pimcore_editor_tabbar .x-tab-focus.x-tab-over.x-tab-default {
     border: none;
 }
 
@@ -651,6 +679,12 @@ form#form-element input:-webkit-autofill:active {
 
 .pimcore_editor_tabbar .x-tab.x-tab-active {
     background-color: var(--paper-bg);
+}
+
+.pimcore_editor_tabbar .x-tab.x-tab-active .pimcore_material_icon, .pimcore_editor_tabbar .x-tab.x-tab-over .pimcore_material_icon {
+    @media (prefers-color-scheme: light) {
+        filter: invert(.75);
+    }
 }
 
 /**
@@ -690,12 +724,47 @@ form#form-element input:-webkit-autofill:active {
     border: 0;
 }
 
-#pimcore_navigation li {
-    border-bottom: 0;
+/**
+ * @Navigation
+ */
+#pimcore_navigation ul {
+    display: flex;
+    list-style: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
 }
 
-#pimcore_navigation li:hover, #pimcore_navigation li:focus {
-    background-color: var(--paper-bg-highlighted);
+#pimcore_navigation li {
+    border-bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#pimcore_navigation li:hover, #pimcore_navigation li:focus, #pimcore_navigation li.active {
+    background-color: transparent;
+}
+
+.x-menu-item-main-icon {
+    position: relative;
+    width: 36px;
+    height: 36px;
+    top: unset;
+    left: unset;
+}
+
+#pimcore_navigation li .x-menu-item-icon:hover, #pimcore_navigation li .x-menu-item-icon:focus {
+    background-color: var(--paper-bg-highlighted) !important;
+    padding: 8px;
+    border-radius: var(--border-radius);
+}
+
+.pimcore_navigation_flyout, .x-menu {
+    border-radius: var(--border-radius);
+    box-shadow: var(--paper-shadow);
 }
 
 /**
@@ -805,13 +874,19 @@ form#form-element input:-webkit-autofill:active {
 .x-window-header-default {
     height: 40px;
     color: var(--paper-color);
-    border-color: var(--paper-border-color);
-    background-color: var(--paper-bg-accent);
+    border-width: 0 !important;
+    top: 0;
+    left: 0;
 }
 
 .x-window-default {
     border-radius: var(--border-radius);
-    box-shadow: var(--button-shadow);
+    box-shadow: var(--paper-shadow);
+    border: none;
+}
+
+.x-tool-close {
+    color: var(--paper-color);
 }
 
 .x-window-body-default {
