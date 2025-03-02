@@ -879,6 +879,11 @@ form#form-element input:-webkit-autofill:active {
     left: 0;
 }
 
+.x-window-header-default {
+    border-color: var(--paper-bg-accent);
+    background-color: var(--paper-bg-accent);
+}
+
 .x-window-default {
     border-radius: var(--border-radius);
     box-shadow: var(--paper-shadow);
