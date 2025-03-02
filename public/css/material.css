@@ -574,6 +574,7 @@ form#form-element input:-webkit-autofill:active {
 
 .x-splitter-vertical {
     z-index: 1;
+    outline: 1px solid var(--paper-bg);
 }
 
 .x-splitter-vertical:has(#pimcore_panel_tree_right-splitter-collapseEl), .x-splitter-vertical:has(#pimcore_panel_tree_left-splitter-collapseEl) {
