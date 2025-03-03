@@ -491,10 +491,6 @@ form#form-element input:-webkit-autofill:active {
     color: var(--paper-color) !important;
 }
 
-.x-keyboard-mode .x-tab-focus.x-tab-over.x-tab-default {
-    border: 1px solid var(--paper-border-color);
-}
-
 .x-keyboard-mode .x-grid-item-focused {
     color: var(--paper-color) !important;
 }
