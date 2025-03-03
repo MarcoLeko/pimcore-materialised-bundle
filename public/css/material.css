@@ -504,6 +504,11 @@ form#form-element input:-webkit-autofill:active {
     background-color: var(--paper-bg-highlighted) !important;
 }
 
+.x-keyboard-mode .x-tab-over.x-tab-active {
+    color: var(--paper-color) !important;
+    background-color: var(--paper-bg-accent) !important;
+}
+
 .x-tree-view .x-grid-item.x-grid-item-selected {
     background-color: var(--paper-bg-accent);
     color: var(--paper-color);
@@ -679,7 +684,7 @@ form#form-element input:-webkit-autofill:active {
 }
 
 .pimcore_editor_tabbar .x-tab.x-tab-active {
-    background-color: var(--paper-bg);
+    background-color: var(--paper-bg) !important;
 }
 
 .pimcore_editor_tabbar .x-tab.x-tab-active .pimcore_material_icon, .pimcore_editor_tabbar .x-tab.x-tab-over .pimcore_material_icon {
