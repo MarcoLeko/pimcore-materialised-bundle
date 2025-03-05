@@ -74,6 +74,13 @@ a {
 /**
     @Login
  */
+
+#logo img {
+    @media (prefers-color-scheme: light) {
+        filter: invert(.75);
+    }
+}
+
 #content, #contentBackground {
     background-color: var(--paper-bg);
 }
