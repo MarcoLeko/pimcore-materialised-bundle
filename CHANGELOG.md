@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 -	Add box-shadow to drawer button
 -   Fix menu icons to only be inverted if they are part of the pimcore_main_menu class
+-   Fix input text-color for autofilled forms
 
 ## 1.1.14
 

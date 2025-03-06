@@ -88,7 +88,8 @@ a {
 #content input {
     border-radius: var(--border-radius);
     box-shadow: var(--paper-shadow) !important;
-    background-color: var(--paper-bg);
+    color: var(--paper-color);
+    background-color: var(--paper-bg-accent);
 }
 
 form#form-element input:-webkit-autofill,
