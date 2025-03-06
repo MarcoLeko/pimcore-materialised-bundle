@@ -310,7 +310,7 @@ form#form-element input:-webkit-autofill:active {
     background-color: var(--paper-bg-highlighted) !important;
 }
 
-.x-menu-item-icon-default {
+.pimcore_navigation_flyout .x-menu-item-icon-default {
     color: var(--paper-color);
 
     @media (prefers-color-scheme: light) {
