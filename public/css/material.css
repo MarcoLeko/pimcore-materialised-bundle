@@ -17,21 +17,6 @@
     --drawer-drag-button-shadow-left: 3px -4px 0px -5px rgba(0, 0, 0, 0.2), 4px -2px 4px -2px rgba(0, 0, 0, 0.14), 0px 0px 0px -8px rgba(0, 0, 0, 0.12);
 }
 
-
-@media (prefers-color-scheme: dark) {
-    :root {
-        --paper-bg-accent: #2d3638fc;
-        --paper-bg-highlighted: #64686b;
-        --paper-bg-main-toolbar: #445057;
-        --paper-bg: #3a3c3f;
-        --paper-bg-contrast: #7676764d;
-        --paper-bg-grid-header: #d0d0d0;
-        --paper-border-color: #2c2c2c;
-        --mask-bg: #4c505261;
-        --paper-color: #f0f0f0;
-    }
-}
-
 .ql-editor {
     min-height: 125px;
     overflow-y: auto;
@@ -76,9 +61,7 @@ a {
  */
 
 #logo img {
-    @media (prefers-color-scheme: light) {
-        filter: invert(.75);
-    }
+    filter: invert(.75);
 }
 
 #content, #contentBackground {
@@ -313,10 +296,7 @@ form#form-element input:-webkit-autofill:active {
 
 .pimcore_navigation_flyout .x-menu-item-icon-default {
     color: var(--paper-color);
-
-    @media (prefers-color-scheme: light) {
-        filter: invert(.75);
-    }
+    filter: invert(.75);
 }
 
 .x-menu-item .x-menu-item-text-default, .x-menu-item-active .x-menu-item-text-default, .x-menu-item-active .x-menu-item-arrow-default {
@@ -658,11 +638,7 @@ form#form-element input:-webkit-autofill:active {
 }
 
 .pimcore_main_toolbar .x-toolbar-text, .pimcore_main_toolbar .x-form-cb-label  {
-    color: var(--paper-color);
-
-    @media (prefers-color-scheme: light) {
-        color: var(--paper-bg);
-    }
+    color: var(--paper-bg);
 }
 
 .pimcore_main_toolbar .x-btn {
@@ -694,9 +670,7 @@ form#form-element input:-webkit-autofill:active {
 }
 
 .pimcore_editor_tabbar .x-tab.x-tab-active .pimcore_material_icon, .pimcore_editor_tabbar .x-tab.x-tab-over .pimcore_material_icon {
-    @media (prefers-color-scheme: light) {
-        filter: invert(.75);
-    }
+    filter: invert(.75);
 }
 
 /**

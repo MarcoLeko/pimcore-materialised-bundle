@@ -31,21 +31,9 @@ return [
 
 ### 🎨 Screenshots
 
-#### Object view - light mode
+#### Object view
 ![demo](./docs/demo-object-view-light.png)
 
-#### Object view
-![demo](./docs/demo-object-view.png)
-
-#### Tree view
-![demo](./docs/demo-tree-view.png)
-
-#### Grid view
-
-![demo](./docs/demo-grid-view.png)
-
-#### Modal view
-![demo](./docs/demo-modal-view.png)
 
 To See more just apply the lib to your pimcore-project - and enjoy ;-)
 
