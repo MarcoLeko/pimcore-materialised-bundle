@@ -10,8 +10,7 @@ This package basically provides a patch-css files for all classes provided by th
 ### ✨ Features
 
 * Material Design Aesthetics – Elevate Pimcore’s UI with smooth shadows, rounded edges, and improved spacing.
-* Refined UI Components – Buttons, toolbars, Modals and Form elements now look polished and consistent.
-* Support dark and light mode 🌓
+* Refined UI Components – Buttons, toolbars, Modals and Form elements now look polished and modern.
 
 ### 📦 Installation
 
@@ -34,6 +33,11 @@ return [
 #### Object view
 ![demo](./docs/demo-object-view-light.png)
 
+#### Tree view
+![demo](./docs/demo-tree-view.png)
+
+#### Modal view
+![demo](./docs/demo-modal-view.png)
 
 To See more just apply the lib to your pimcore-project - and enjoy ;-)
 
