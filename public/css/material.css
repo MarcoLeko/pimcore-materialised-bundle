@@ -94,6 +94,11 @@ form#form-element input:-webkit-autofill:active {
 /**
     @Grids @Tabs
  */
+#pimcore_panel_tabs > .x-panel-bodyWrap > .x-panel-body > .x-tabpanel-child {
+    border-color: var(--paper-border-color);
+    background: var(--paper-bg);
+}
+
 .x-panel-default, .x-panel-header, .x-panel-body-default, div.x-border-layout-ct, div.x-border-layout-ct, .pimcore_main_accordion .x-panel-body, .pimcore_object_panel_edit .x-toolbar-default, .x-form-checkbox-default:before, .x-fieldset .x-fieldset-header, .pimcore_main_splitter, .pimcore_main_accordion .x-panel-header {
     background-color: var(--paper-bg);
     color: var(--paper-color);
