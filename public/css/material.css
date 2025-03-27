@@ -911,6 +911,11 @@ form#form-element input:-webkit-autofill:active {
     background: var(--paper-bg-main-toolbar);
 }
 
+.pimcore-workflow-action-workflow-label {
+    color: var(--paper-color);
+    margin-left: 0;
+}
+
 .x-menu-item-active {
     background: var(--paper-bg-highlighted) !important;
 }
