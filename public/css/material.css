@@ -237,6 +237,7 @@ form#form-element input:-webkit-autofill:active {
     background-size: 60%;
     overflow: auto;
     background: inherit;
+    padding: 2px 0;
 }
 
 .x-toolbar-default .x-box-menu-after {
@@ -800,6 +801,10 @@ form#form-element input:-webkit-autofill:active {
 .pimcore_pagingtoolbar_container .x-toolbar .x-box-inner:has(.x-box-target:not(:empty)) {
     min-height: 32px;
     padding: 0 2px;
+}
+
+.pimcore_pagingtoolbar_container .x-form-text-field-body-default {
+    padding: 0;
 }
 
 .pimcore_pagingtoolbar_container {
