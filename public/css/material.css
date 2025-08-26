@@ -99,6 +99,14 @@ form#form-element input:-webkit-autofill:active {
     background: var(--paper-bg);
 }
 
+#pimcore_panel_tabs > .x-panel-bodyWrap > .x-panel-body > .x-tabpanel-child > .x-panel-bodyWrap > .x-tab-bar .x-tab-inner-default {
+    color: var(--paper-color);
+}
+
+#pimcore_panel_tabs > .x-panel-bodyWrap > .x-panel-body > .x-tabpanel-child > .x-panel-bodyWrap > .x-tab-bar .x-tab-active.x-tab-over .x-tab-inner-default {
+    color: var(--paper-color);
+}
+
 .x-panel-default, .x-panel-header, .x-panel-body-default, div.x-border-layout-ct, div.x-border-layout-ct, .pimcore_main_accordion .x-panel-body, .pimcore_object_panel_edit .x-toolbar-default, .x-form-checkbox-default:before, .x-fieldset .x-fieldset-header, .pimcore_main_splitter, .pimcore_main_accordion .x-panel-header {
     background-color: var(--paper-bg);
     color: var(--paper-color);
@@ -237,7 +245,6 @@ form#form-element input:-webkit-autofill:active {
     background-size: 60%;
     overflow: auto;
     background: inherit;
-    padding: 2px 0;
 }
 
 .x-toolbar-default .x-box-menu-after {
@@ -625,6 +632,11 @@ form#form-element input:-webkit-autofill:active {
 
 .pimcore_image_container {
     width: auto !important;
+}
+
+.pimcore_droptarget_image > .x-panel-bodyWrap > .pimcore_image_container {
+    width: auto !important;
+    height: unset !important;
 }
 
 /*
