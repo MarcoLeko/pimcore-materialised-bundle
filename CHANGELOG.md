@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## 2.0.4
 
 -	Fix more spacing for pimcore image containers
+
 ## 2.0.3
 
 -	Fix spacing for inner-container and pagingtoolbar_container field body
